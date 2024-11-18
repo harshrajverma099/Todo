@@ -1,0 +1,5 @@
+<i class="fa-solid fa-check" style="font-size: 12px; color: white;"></i>
+background-color: rgb(0, 123, 255);
+const doneBtn = document.getElementById(`${id}`)
+doneBtn.innerHTML = '<i class="fa-solid fa-check" style="font-size: 12px; color: white;"></i>'
+doneBtn.style.backgroundColor = "rgb(0, 123, 255)"
