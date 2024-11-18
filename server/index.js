@@ -17,10 +17,12 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.use(express.json())
 app.use(cors({
-    origin: ["https://todo-k81j.vercel.app"],
-    methods: ["POST", "GET", "DELETE", "PUT"], 
-    credentials: true
+    origin: ["http://127.0.0.1:5500", "https://todo-k81j.vercel.app"],
+    methods: ["POST", "GET", "DELETE", "PUT"],
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"] 
 }));
+app.options('*', cors());
 app.use(express.static('public'))
 
 const nodemailer = require("nodemailer");
