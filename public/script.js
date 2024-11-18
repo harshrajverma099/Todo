@@ -7,7 +7,7 @@ async function verification(){
     }
     console.log(signUpEmail)
     localStorage.setItem("email",signUpEmail)
-    const response = await axios.post("http://localhost:3000/verification",{
+    const response = await axios.post("http://todo-ten-jade.vercel.app/verification",{
         email: signUpEmail
     })
     
@@ -37,7 +37,7 @@ async function verifyOTP(){
         messageBox(systemMessage,false)
         return
     }
-    const response = await axios.post("http://localhost:3000/otp",{
+    const response = await axios.post("http://todo-ten-jade.vercel.app/otp",{
         otp: otp,
         hashedOtp: localStorage.getItem("otp")
     })
@@ -64,7 +64,7 @@ async function signUp(){
         messageBox(systemMessage,false)
         return
     }
-    const response = await axios.post("http://localhost:3000/signUp",{
+    const response = await axios.post("http://todo-ten-jade.vercel.app/signUp",{
         password: password,
         email: localStorage.getItem("email"),
         name: name
@@ -94,7 +94,7 @@ async function signIn(){
         messageBox(systemMessage,false)
         return 
     }
-    const response = await axios.post("http://localhost:3000/signIn",{
+    const response = await axios.post("http://todo-ten-jade.vercel.app/signIn",{
         email: email,
         password: password
     })
@@ -112,7 +112,7 @@ async function signIn(){
 }
 
 async function readTask(token){
-    const response = await axios.get("http://localhost:3000/readTask",{
+    const response = await axios.get("http://todo-ten-jade.vercel.app/readTask",{
         headers:{
             token: token
         }
