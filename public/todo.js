@@ -12,7 +12,7 @@ async function addTasks(){
         return 
     }
     console.log(addTask)
-    const response = await axios.post("http://localhost:3000/addTasks", {
+    const response = await axios.post("http://todo-ten-jade.vercel.app/addTasks", {
         task: addTask
     },{
         headers:{
@@ -25,7 +25,7 @@ async function addTasks(){
 }
 
 async function readTask(token){
-    const response = await axios.get("http://localhost:3000/readTask",{
+    const response = await axios.get("http://todo-ten-jade.vercel.app/readTask",{
         headers:{
             token: token
         }
@@ -288,7 +288,7 @@ function todoDiv3(task, id, done) {
 
 async function deleteTask(id) {
     let token = localStorage.getItem("token")
-    const response = await axios.delete("http://localhost:3000/deleteTask", {
+    const response = await axios.delete("http://todo-ten-jade.vercel.app/deleteTask", {
         headers: {
             token: token
         },
@@ -310,7 +310,7 @@ function editTask(id,task){
 async function doneTask(id) {
     let token = localStorage.getItem("token");
     const response = await axios.put(
-        "http://localhost:3000/doneTask",
+        "http://todo-ten-jade.vercel.app/doneTask",
         {
             id: id
         },
