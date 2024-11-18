@@ -16,7 +16,11 @@ require("dotenv").config({path: "./plaintext.env"});
 mongoose.connect(process.env.MONGO_URI)
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+    origin: ["https://https://todo-k81j.vercel.app/"],
+    methods: ["POST", "GET", "DELETE", "PUT"], 
+    credentials: true
+}))
 app.use(express.static('public'))
 
 const nodemailer = require("nodemailer");
