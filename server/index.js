@@ -20,7 +20,7 @@ app.use(cors({
     origin: ["https://todo-k81j.vercel.app"],
     methods: ["POST", "GET", "DELETE", "PUT"], 
     credentials: true
-}))
+}));
 app.use(express.static('public'))
 
 const nodemailer = require("nodemailer");
