@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 app.use(express.json())
 app.use(cors({
-    origin: ["https://todo-k81j.vercel.app/"],
+    origin: ["https://todo-k81j.vercel.app"],
     methods: ["POST", "GET", "DELETE", "PUT"], 
     credentials: true
 }))
